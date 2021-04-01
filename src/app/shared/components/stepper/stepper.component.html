@@ -1,0 +1,13 @@
+<div class="app-stepper">
+  <div class="app-stepper__line"></div>
+  <div class="app-stepper__steps">
+    <div *ngFor="let step of steps; let i = index" class="app-stepper__step">
+      <div class="app-stepper__step__radio">
+        <div [ngClass]="{ 'app-stepper__step__radio__inner': true, 'app-stepper__step__radio__inner--selected': i + 1 === activeStep }"></div>
+      </div>
+      <div class="app-stepper__step__title">
+        {{ step }}
+      </div>
+    </div>
+  </div>
+</div>

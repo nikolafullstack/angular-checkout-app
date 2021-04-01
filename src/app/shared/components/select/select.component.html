@@ -1,0 +1,12 @@
+
+<div class="app-select" [style]="getSelectWrapperStyle">
+  <div class="app-select__selected" (click)="changeSelectState()">
+    <div>
+      {{value?.label || placeholder}}
+    </div>
+    <img src="/assets/images/down-arrow.svg" />
+  </div>
+  <ul *ngIf="open" class="app-select__options" [style]="'top:' + height">
+    <li *ngFor="let option of options" class="app-select__option" (click)="selectValue(option)">{{ option.label }}</li>
+  </ul>
+</div>

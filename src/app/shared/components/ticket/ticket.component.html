@@ -1,0 +1,72 @@
+<div class="app-tickets__ticket">
+  <div *ngIf="productImage" class="app-tickets__ticket__img">
+    <img [src]="productImage" alt="Product Image" />
+  </div>
+  <div class="app-tickets__ticket-info">
+    <div class="app-tickets__ticket__title">
+      {{ title }}
+    </div>
+    <div class="app-tickets__ticket__description">
+      {{ description }}
+    </div>
+    <div *ngIf="!donation && !productImage" [ngClass]="{ 'app-tickets__ticket__sales': true, 'app-tickets__ticket__sales--error': isSalesEndSoon }">
+      Sales end {{ getSalesDate }}
+    </div>
+    <div *ngIf="!donation" class="app-tickets__ticket__price-count">
+      <span>{{ getPrice }}</span>
+      <app-select
+        [options]="ticketOptions"
+        [selectedValue]="summary?.quantity"
+        (select)="selectQuantity($event)"
+      ></app-select>
+    </div>
+    <ng-container *ngIf="!donation && !productImage">
+      <div *ngIf="getSummaryQuantity === 0 && stock !== -1" class="app-tickets__ticket__notif">
+        Only {{ stock }} tickets available. <span (click)="addTicketToWaitList()">Join waitlist</span>
+      </div>
+      <div *ngIf="getSummaryQuantity > 0 && !getIsWaitList" class="app-tickets__ticket__notif">
+        {{ getSummaryQuantity }} Ticket Added to cart. Want to join the waitlist for 2 tickets? <span (click)="addTicketToWaitList()">Join Waitlist</span>
+      </div>
+      <div *ngIf="getIsWaitList" class="app-tickets__ticket__notif">
+        2 Tickets Waitlisted. <span (click)="removeTicketFromWaitList()">Cancel</span>
+      </div>
+    </ng-container>
+    <div *ngIf="donation" class="app-tickets__ticket__donate">
+      <div class="app-tickets__ticket__donate__title">
+        I want to donate
+      </div>
+      <div class="app-tickets__ticket__donate__prices">
+        <div
+          [ngClass]="{ 'app-tickets__ticket__donate__prices__price': true, 'app-tickets__ticket__donate__prices__price--selected': selectedPrice === 50 }"
+          (click)="selectPrice(50)"
+        >
+          $50 
+        </div>
+        <div
+          [ngClass]="{ 'app-tickets__ticket__donate__prices__price': true, 'app-tickets__ticket__donate__prices__price--selected': selectedPrice === 100 }"
+          (click)="selectPrice(100)"
+        >
+          $100
+        </div>
+        <div
+          [ngClass]="{ 'app-tickets__ticket__donate__prices__price': true, 'app-tickets__ticket__donate__prices__price--selected': selectedPrice === 200 }"
+          (click)="selectPrice(200)"
+        >
+          $200
+        </div>
+        <div
+          [ngClass]="{ 'app-tickets__ticket__donate__prices__price': true, 'app-tickets__ticket__donate__prices__price--selected': selectedPrice === 500 }"
+          (click)="selectPrice(500)"
+        >
+          $500
+        </div>
+        <div
+          [ngClass]="{ 'app-tickets__ticket__donate__prices__price': true, 'app-tickets__ticket__donate__prices__price--custom': true }"
+        >
+          <div>$</div>
+          <input [formControl]="customPrice" placeholder="Enter amount" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

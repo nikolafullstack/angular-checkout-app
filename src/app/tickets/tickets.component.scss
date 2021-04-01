@@ -1,0 +1,15 @@
+:host {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 18px;
+  @media screen and (max-width: 900px) {
+    display: block;
+  }
+}
+
+.app-tickets {
+  padding: 45px 60px 60px 60px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+}

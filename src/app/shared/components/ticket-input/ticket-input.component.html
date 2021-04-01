@@ -1,0 +1,59 @@
+<div [ngClass]="{ 'app-checkout__block-wrapper': true, 'app-checkout__block-wrapper--open': open }">
+  <div class="app-checkout__block">
+    <img
+      (click)="changeBlockState()"
+      [ngClass]="{ 'app-checkout__arrow-up': true, 'app-checkout__arrow-up--rotated': open }"
+      src="/assets/images/up-arrow.svg"
+      alt=""
+    />
+    <div class="app-checkout__block__title">
+      Attendee {{ index }} - {{ ticket.title }}
+    </div>
+    <form [formGroup]="formGroup" class="app-checkout__block__body" *ngIf="ticket?.isFree; else premiumForm">
+      <div class="app-checkout__block__double-input">
+        <input placeholder="First Name *" formControlName="firstName" [ngClass]="{ 'error': hasError('firstName', 'required') }" />
+        <input placeholder="Last Name *" formControlName="lastName" [ngClass]="{ 'error': hasError('lastName', 'required') }" />
+      </div>
+      <div>
+        <input placeholder="Email *" formControlName="email" [ngClass]="{ 'error': hasError('email', 'required') }" />
+      </div>
+      <div class="app-checkout__block__select">
+        <div class="app-checkout__block__select__title">
+          Would you like to receive the branded connections and other e-communications from the us?
+        </div>
+        <div class="app-checkout__block__select__radio-wrapper">
+          <div class="app-checkout__block__select__radio">
+            <div class="app-checkout__block__select__radio__inner app-checkout__block__select__radio__inner--selected"></div>
+          </div>
+          <div>Yes</div>
+        </div> 
+        <div class="app-checkout__block__select__radio-wrapper">
+          <div class="app-checkout__block__select__radio">
+            <div class="app-checkout__block__select__radio__inner"></div>
+          </div>
+          <div>No</div>
+        </div>
+      </div>
+    </form>
+    <ng-template #premiumForm>
+      <div class="app-checkout__block__body">
+        <div class="app-checkout__block__double-input">
+          <input placeholder="First Name" />
+          <input placeholder="Last Name" />
+        </div>
+        <div>
+          <input [placeholder]="'Email'" />
+        </div>
+        <div>
+          <input [placeholder]="'Job Title'" />
+        </div>
+        <div>
+          <input [placeholder]="'Company'" />
+        </div>
+        <div>
+          <app-select [width]="'100%'" height="45px" [options]="ticketOptions"></app-select>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

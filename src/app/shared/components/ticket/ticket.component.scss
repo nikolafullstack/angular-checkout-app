@@ -1,0 +1,118 @@
+.app-tickets__ticket {
+  padding: 25px 0;
+  border-bottom: 1px solid #DDDBDA;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  &:last-child {
+    border: none;
+  }
+  &-info {
+    flex: 1;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+  }
+  &__description {
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+  }
+  &__sales {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 22px;
+    color: #706E6B;
+    margin-bottom: 14px;
+    &.app-tickets__ticket__sales--error {
+      color: #EB7092;
+      font-weight: 700;
+    }
+  }
+  &__price-count {
+    span {
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 18px;
+      margin-right: 35px;
+    }
+  }
+  &__notif {
+    background: rgba(225, 218, 207, 0.31);
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 13px;
+    line-height: 22px;
+    margin-top: 17px;
+    span {
+      color: #0070D2;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+  &__donate {
+    &__title {
+      margin-top: 20px;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 18px;
+    }
+    &__prices {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-top: 5px;
+      &__price {
+        background: #FFFFFF;
+        border: 1px solid #C4C4C4;
+        box-sizing: border-box;
+        border-radius: 4px;
+        margin-right: 12px;
+        font-size: 16px;
+        line-height: 22px;
+        min-width: 54px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        &.app-tickets__ticket__donate__prices__price--selected {
+          background: #7D7D7D;
+          color: #FFFFFF;
+        }
+        &.app-tickets__ticket__donate__prices__price--custom {
+          cursor: initial;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          div {
+            height: 100%;
+            border-right: 1px solid #C4C4C4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 6px;
+          }
+          input {
+            border: none;
+            padding: 0;
+            width: 100px;
+            height: 100%;
+            padding-left: 7px;
+            font-size: 14px;
+            line-height: 22px;
+          }
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  &__img {
+    padding-right: 25px;
+  }
+}

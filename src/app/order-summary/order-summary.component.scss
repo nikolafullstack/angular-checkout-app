@@ -1,0 +1,128 @@
+
+.app-order-summary {
+  background: #FFFFFF;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+  width: 100%;
+  padding: 40px 32px;
+  box-sizing: border-box;
+  @media screen and (max-width: 900px) {
+    margin-top: 20px;
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 27px;
+  }
+  .app-order-summary__tickets {
+    &__ticket {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 22px;
+      &.app-order-summary__tickets__ticket--waitlist {
+        font-style: italic;
+        color: #939290;
+      }
+    }
+  }
+  hr {
+    opacity: 0.3;
+    &.app-order-summary__hr-first {
+      margin-top: 30px;
+      margin-bottom: 18px;
+    }
+    &.app-order-summary__hr-second {
+      margin: 15px 0;
+    }
+  }
+  &__edit {
+    margin-top: 15px;
+    font-size: 15px;
+    line-height: 22px;
+    color: #0070D2;
+    cursor: pointer;
+  }
+  &__subtotal__item {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+  }
+  &__promo-code {
+    font-size: 15px;
+    line-height: 22px;
+    color: #0070D2;
+    margin-top: 40px;
+    cursor: pointer;
+  }
+  &__promo-code-input-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+    div {
+      flex: 1;
+      padding-right: 8px;
+      input {
+        width: 100%;
+      }
+    }
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 75px;
+      height: 32px;
+      min-width: 75px;
+      background: #FFFFFF;
+      border: 1px solid #0EB58A;
+      color: #0EB58A;
+      box-sizing: border-box;
+      border-radius: 4px;
+      font-size: 15px;
+      line-height: 20px;
+      outline: none;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+      &:active {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+.app-order-summary__checkout-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 298px;
+  height: 53px;
+  background: #0EB58A;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  color: #FFFFFF;
+  margin-top: 30px;
+  @media screen and (max-width: 900px) {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,55 @@
+@import url('//db.onlinewebfonts.com/c/0fadaa21fcac88ceee0bb8da992c221b?family=SalesforceSans-Regular');
+@import url('//db.onlinewebfonts.com/c/7ad0546573c86e39ebac906bd70a7198?family=SalesforceSans-Bold');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #E5E5E5;
+  font-family: SalesforceSans-Regular;
+  color: #000;
+}
+
+div, span, button, ul, li, hr, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+input {
+  height: 32px;
+  border: 1px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 4px;
+  outline: none;
+  padding: 6px 12px;
+}
+
+select {
+  border: 1px solid #C4C4C4;
+  border-radius: 4px;
+  outline: none;
+  padding: 6px;
+  min-width: 60px;
+  font-family: SalesforceSans-Regular;
+}
+
+hr {
+  border-color: #DDDBDA;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:active {
+    opacity: 0.6;
+  }
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}

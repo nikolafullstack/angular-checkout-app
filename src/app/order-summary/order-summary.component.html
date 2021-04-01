@@ -1,0 +1,42 @@
+<div class="app-order-summary-wrapper">
+  <div class="app-order-summary">
+    <div class="app-order-summary__title">Order summary</div>
+    <div class="app-order-summary__tickets">
+      <div *ngFor="let item of summary" class="app-order-summary__tickets__ticket">
+        <div>{{ item.quantity }}x {{ item.title }}</div>
+        <div>{{ convertSummaryPrice(item) }}</div>
+      </div>
+      <div *ngFor="let item of waitlist" class="app-order-summary__tickets__ticket app-order-summary__tickets__ticket--waitlist">
+        <div>{{ item.quantity }}x {{ item.title }}</div>
+        <div>{{ convertSummaryPrice(item) }}</div>
+      </div>
+    </div>
+    <div class="app-order-summary__edit" *ngIf="editable" [routerLink]="['..']">Edit</div>
+    <hr class="app-order-summary__hr-first" />
+    <div class="app-order-summary__subtotal__item">
+      <div>Subtotal</div>
+      <div>{{getSubTotal}}</div>
+    </div>
+    <div class="app-order-summary__subtotal__item">
+      <div>Taxes</div>
+      <div>{{currencyFormat(tax)}}</div>
+    </div>
+    <hr class="app-order-summary__hr-second" />
+    <div class="app-order-summary__total">
+      <div>Total</div>
+      <div>{{total}}</div>
+    </div>
+    <div class="app-order-summary__promo-code" (click)="onClickPromocode()">
+      Have a promo code?
+    </div>
+    <div class="app-order-summary__promo-code-input-wrapper" *ngIf="promocodeInpute">
+      <div>
+        <input placeholder="Promo Code" />
+      </div>
+      <button type="button">Apply</button>
+    </div>
+  </div>
+  <button [disabled]="buttonDisabled" class="app-order-summary__checkout-btn" (click)="onButtonClick()">
+    {{ buttonText }}
+  </button>
+</div>

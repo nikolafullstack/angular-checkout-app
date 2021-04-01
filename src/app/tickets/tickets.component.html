@@ -1,0 +1,45 @@
+<div class="app-tickets">
+  <app-back-button title="CU - Alumni Weekend"></app-back-button>
+  <app-ticket
+    id="1"
+    title="Free Ticket"
+    description="Free ticket for anyone to make a valuable contribution towards our future online events programme. Thank you."
+    [endDate]="1617226823822"
+    [price]="-1"
+    [stock]="3"
+  ></app-ticket>
+
+  <app-ticket
+    id="2"
+    title="Alumni Base Ticket"
+    description="This livestream will broadcast via a private YouTube link that will be sent to ticket purchasers an hour prior to showtime"
+    [endDate]="1617655259173"
+    [price]="95.99"
+    [stock]="4"
+  ></app-ticket>
+
+  <app-ticket
+    id="3"
+    title="Alumni VIP Ticket"
+    description="This livestream will broadcast via a private YouTube link that will be sent to ticket purchasers an hour prior to showtime"
+    [endDate]="1617655259173"
+    [price]="3500"
+    [stock]="5"
+  ></app-ticket>
+
+  <app-ticket
+    title="Donate"
+    description="Access to arts is vital. Pay what you can."
+    [price]="3500"
+    [donation]="true"
+  ></app-ticket>
+
+  <app-ticket
+    title="Book: Good Strategy - Bad Strategy"
+    description="Learn from the experts of business process management"
+    productImage="/assets/images/book.png"
+    [price]="17.99"
+  ></app-ticket>
+</div>
+
+<app-order-summary (buttonClick)="goToCheckout()"></app-order-summary>

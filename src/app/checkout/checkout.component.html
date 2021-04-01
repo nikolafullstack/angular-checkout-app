@@ -1,0 +1,37 @@
+<div>
+  <app-back-button title="Back"></app-back-button>
+
+  <div class="app-checkout">
+    <app-stepper [steps]="steps" [activeStep]="1"></app-stepper>
+    <div class="app-checkout__block app-checkout__tickets-rush">
+      <div class="app-checkout__tickets-rush__title">
+        Tickets
+      </div>
+      <div class="app-checkout__tickets-rush__info">
+        <div class="app-checkout__tickets-rush__info__img">
+          <img src="/assets/images/rush.png" alt="" />
+        </div>
+        <div class="app-checkout__tickets-rush__info__text">
+          <div class="app-checkout__tickets-rush__info__text__title">
+            In a rush?
+          </div>
+          <div class="app-checkout__tickets-rush__info__text__description">
+            Register your tickets now or after checking out. Your choice. 
+          </div>
+        </div>
+        <div class="app-checkout__tickets-rush__info__fill-later">
+          Fill this out later
+        </div>
+      </div>
+    </div>
+    <ng-container *ngFor="let ticketWrap of tickets; let i = index">
+      <app-ticket-input
+        *ngFor="let ticket of getArrayFromNumber(ticketWrap.quantity); let j = index"
+        [ticket]="ticketWrap"
+        [index]="getTicketIndex(i, j)"
+      ></app-ticket-input>
+    </ng-container>
+  </div>
+</div>
+
+<app-order-summary [editable]="true" buttonText="Review Sessions" [buttonDisabled]="isButtonDisabled()" (buttonClick)="buttonClick()"></app-order-summary>
