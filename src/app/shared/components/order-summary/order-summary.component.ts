@@ -1,8 +1,8 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { AppState } from '../shared/store/app.state';
-import { SummaryActions, SummarySelectors } from '../shared/store/summary';
-import { SummaryItemModel } from '../shared/store/summary/actions';
+import { AppState } from '../../../store/app.state';
+import { SummaryActions, SummarySelectors } from '../../../store/summary';
+import { SummaryItemModel } from '../../../store/summary/actions';
 
 @Component({
   selector: 'app-order-summary',

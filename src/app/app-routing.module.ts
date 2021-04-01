@@ -1,11 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { TicketsComponent } from './tickets/tickets.component';
 
 const routes: Routes = [
-  { path: '', component: TicketsComponent, canActivate: [] },
-  { path: 'checkout', component: CheckoutComponent, canActivate: [] },
+  {
+    path: '', 
+    loadChildren: () => import('./tickets/tickets.module').then(
+      module => module.TicketsModule
+    )
+  },
+  {
+    path: 'checkout', 
+    loadChildren: () => import('./checkout/checkout.module').then(
+      module => module.CheckoutModule
+    )
+  }
 ];
 
 @NgModule({

@@ -2,10 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
 import * as moment from 'moment';
-import { AppState } from '../../store/app.state';
-import { SummaryActions, SummarySelectors } from '../../store/summary';
-import { SummaryItemModel } from '../../store/summary/actions';
-import { ISelectOption } from '../select/select.component';
+import { AppState } from '../../../store/app.state';
+import { SummaryActions, SummarySelectors } from '../../../store/summary';
+import { SummaryItemModel } from '../../../store/summary/actions';
+import { ISelectOption } from '../../../shared/components/select/select.component';
 
 @Component({
   selector: 'app-ticket',

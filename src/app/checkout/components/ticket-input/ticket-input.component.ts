@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { SummaryItemModel } from '../../store/summary/actions';
-import { ISelectOption } from '../select/select.component';
+import { SummaryItemModel } from '../../../store/summary/actions';
+import { ISelectOption } from '../../../shared/components/select/select.component';
 
 @Component({
   selector: 'app-ticket-input',

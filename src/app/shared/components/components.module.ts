@@ -4,9 +4,8 @@ import { RouterModule } from '@angular/router';
 import { BackButtonComponent } from './back-button/back-button.component';
 import { StepperComponent } from './stepper/stepper.component';
 import { SelectComponent } from './select/select.component';
-import { TicketComponent } from './ticket/ticket.component';
-import { TicketInputComponent } from './ticket-input/ticket-input.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 
 
@@ -21,15 +20,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BackButtonComponent,
     StepperComponent,
     SelectComponent,
-    TicketComponent,
-    TicketInputComponent,
+    OrderSummaryComponent,
   ],
   exports: [
     BackButtonComponent,
     StepperComponent,
     SelectComponent,
-    TicketComponent,
-    TicketInputComponent,
+    OrderSummaryComponent,
   ],
 })
 export class ComponentsModule { }

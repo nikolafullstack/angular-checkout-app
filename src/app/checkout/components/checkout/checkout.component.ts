@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { AppState } from '../shared/store/app.state';
-import { SummarySelectors } from '../shared/store/summary';
-import { SummaryItemModel } from '../shared/store/summary/actions';
+import { AppState } from 'src/app/store/app.state';
+import { SummarySelectors } from 'src/app/store/summary';
+import { SummaryItemModel } from 'src/app/store/summary/actions';
 
 @Component({
   selector: 'app-checkout',
