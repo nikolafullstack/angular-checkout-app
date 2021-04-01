@@ -36,24 +36,24 @@
       </div>
     </form>
     <ng-template #premiumForm>
-      <div class="app-checkout__block__body">
+      <form [formGroup]="formGroup" class="app-checkout__block__body">
         <div class="app-checkout__block__double-input">
-          <input placeholder="First Name" />
-          <input placeholder="Last Name" />
+          <input formControlName="firstName" placeholder="First Name" />
+          <input formControlName="lastName" placeholder="Last Name" />
         </div>
         <div>
-          <input [placeholder]="'Email'" />
+          <input formControlName="email" [placeholder]="'Email'" />
         </div>
         <div>
-          <input [placeholder]="'Job Title'" />
+          <input formControlName="job_title" [placeholder]="'Job Title'" />
         </div>
         <div>
-          <input [placeholder]="'Company'" />
+          <input formControlName="company" [placeholder]="'Company'" />
         </div>
         <div>
           <app-select [width]="'100%'" height="45px" [options]="ticketOptions"></app-select>
         </div>
-      </div>
+      </form>
     </ng-template>
   </div>
 </div>

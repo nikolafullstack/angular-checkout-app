@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SummaryItemModel } from '../../../store/summary/actions';
 import { ISelectOption } from '../../../shared/components/select/select.component';
 
@@ -10,7 +10,7 @@ import { ISelectOption } from '../../../shared/components/select/select.componen
 })
 export class TicketInputComponent implements OnInit {
 
-  formGroup = this.fb.group({
+  formGroup: FormGroup = this.fb.group({
     firstName: this.fb.control('', Validators.required),
     lastName: this.fb.control('', Validators.required),
     email: this.fb.control('', Validators.required),
@@ -33,6 +33,23 @@ export class TicketInputComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if (this.ticket.isFree) {
+      this.formGroup = this.fb.group({
+        firstName: this.fb.control('', Validators.required),
+        lastName: this.fb.control('', Validators.required),
+        email: this.fb.control('', Validators.required),
+      });
+    } else {
+      this.formGroup = this.fb.group({
+        firstName: this.fb.control(''),
+        lastName: this.fb.control(''),
+        email: this.fb.control(''),
+        job_title: this.fb.control(''),
+        company: this.fb.control(''),
+        country: this.fb.control(''),
+      });
+    }
+
     this.formGroup.reset();
   }
 
